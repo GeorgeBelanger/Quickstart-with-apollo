@@ -1,0 +1,21 @@
+// derived classed = subclasses, base classes = super classes. super() is required for any derived class that has a constructor, and calls the constructor of the base class. 
+
+// instead of @description for an object, we have this.description and instead of initialize we have constructor(decription: string) but also have to declare that description exists and it's datatype before making constructor. Also when its a subclass you use {super(description)} instead of declaring the existence of the attributes for the class and also declaring thier datatype.
+
+// pretty sure the = 0 is the default
+
+class Animal {
+    name: string;
+    constructor(theName: string) { this.name = theName; }
+    move(distanceInMeters: number = 0) {
+        console.log(`${this.name} moved ${distanceInMeters}m.`);
+    }
+}
+
+class Snake extends Animal {
+    constructor(name: string) { super(name); }
+    move(distanceInMeters = 5) {
+        console.log("Slithering...");
+        super.move(distanceInMeters);
+    }
+}
